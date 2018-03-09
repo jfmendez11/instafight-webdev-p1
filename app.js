@@ -4,9 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const mongoose = require("mongoose");
+const config = require("./config");
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+
+let apiRouterHistorico = require("./routes/api/historico")(app, express);
 
 var app = express();
 
@@ -23,7 +26,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use("/history", apiRouterHistorico);
+
+//Connection to database
+mongoose.connect(config.database);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

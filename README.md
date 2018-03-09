@@ -1,10 +1,10 @@
 # Instafight (Presenté el examen con la sección 1, pero soy de la sección 2)
 
-Instafight is a web application, where 2 Instagram users are submited by the user, and they compete to see which one has more likes in their last 10 photos.
+Instafight is a web application, where 2 Instagram users are submited by the user, and they compete to see which one has more likes in their last photos.
 
 # SetUp
 
-To edit InstaFigth code on your local machine follow these steps:
+To edit InstaFight code on your local machine follow these steps:
 
 * Make sure you have npm installed.
 * Install `nodemon` -- `npm install -g nodemon`
@@ -12,7 +12,7 @@ To edit InstaFigth code on your local machine follow these steps:
 * Install dependencies: `cd instafigth-webdev-p1 && npm install`-- `cd frontend && npm install`
 * After this you are reade to edit the code. To view changes, run in `frontend` folder: `npm run build`
 * Then on `instafigth-webdev-p1` run `npm start`
-* **Note: You only have to run `npm start` once, as nodemon restarts the server every time a file has changed.
+* **Note: You only have to run `npm start` once, as nodemon restarts the server every time a file has changed.**
 * View results at: http://localhost:8000
 
 # Using the app
@@ -28,3 +28,7 @@ To edit InstaFigth code on your local machine follow these steps:
 # My Creative Component
 
 I decided to implement a creative component, that displays a carousel with the pictures of the winner!
+
+# View app
+
+**https://instafightclub.herokuapp.com**

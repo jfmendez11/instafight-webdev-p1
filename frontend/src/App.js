@@ -52,10 +52,10 @@ class App extends Component {
         return res.json();
       })
       .then((json) => {
-        ppSrc1 = json.user.profile_pic_url_hd;
-        for (let i = 0; i < json.user.media.nodes.length; i++) {
-          likes1 += json.user.media.nodes[i].likes.count;
-          imgSrc1.push(json.user.media.nodes[i].display_src);
+        ppSrc1 = json.graphql.user.profile_pic_url_hd;
+        for (let i = 0; i < json.graphql.user.edge_owner_to_timeline_media.edges.length; i++) {
+          likes1 += json.graphql.user.edge_owner_to_timeline_media.edges[i].node.edge_liked_by.count;
+          imgSrc1.push(json.graphql.user.edge_owner_to_timeline_media.edges[i].node.display_url);
         }
         this.setState({ likesP1: likes1 });
       })
@@ -69,10 +69,10 @@ class App extends Component {
               return res.json();
           })
           .then((json) => {
-            ppSrc2 = json.user.profile_pic_url_hd;
-            for (let i = 0; i < json.user.media.nodes.length; i++) {
-              likes2 += json.user.media.nodes[i].likes.count;
-              imgSrc2.push(json.user.media.nodes[i].display_src);
+            ppSrc2 = json.graphql.user.profile_pic_url_hd;
+            for (let i = 0; i < json.graphql.user.edge_owner_to_timeline_media.edges.length; i++) {
+              likes2 += json.graphql.user.edge_owner_to_timeline_media.edges[i].node.edge_liked_by.count;
+              imgSrc2.push(json.graphql.user.edge_owner_to_timeline_media.edges[i].node.display_url);
             }
             this.setState({ likesP2: likes2 });
           })

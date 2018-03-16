@@ -10,7 +10,7 @@ class WinnerCarousel extends Component {
                     <div className="col-md-12">
                         <Carousel id="winner-car">
                             {lst.map((src) =>
-                                <Carousel.Item>
+                                <Carousel.Item key={src}>
                                     <img src={src} alt="winner pic" width={640} height={640} />
                                 </Carousel.Item>
                             )}
